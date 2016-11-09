@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dropdown/Animation | Dominic F</title>
+
+<style>
+
+	header {
+		background: #154437;
+		height:50px;
+		text-align: center;
+
+	}
+
+	body, ul{
+		margin:0;
+	}
+
+	
+	li {
+		list-style: none;
+		display: inline-block;
+		/*border: 1px green solid;*/
+		font-size: 1.4em;
+		padding: 10px 40px;
+
+
+
+	}
+
+	li a{
+		color:white;
+		text-decoration: none;
+
+	}
+
+	li:hover {
+		color: white;
+		background: blue;
+
+
+	}
+
+	body {
+		background:black;
+		color: white;
+	}
+
+	/* Contains drop down menu. Hides for default. */
+	#container {
+		margin-top:10px;
+		display: none;
+		position:absolute;
+		background:#154437;
+		width:200px;
+		height:130px;
+		text-align:left;
+		
+
+	}
+
+	/* Makes the list items into blocks */
+	#container a{
+		display: block;
+		padding: 10px 0 10px 5px;
+	}
+
+	#container a:hover{
+		background:blue;
+	}
+
+
+	#dropDown {
+		display:inline-block;
+
+	}
+	#dropDown:hover #container{
+			display:block;
+	}
+/* Animation Styling */
+
+	#myContainer {
+		margin-top:20px;
+		width:960px;
+		height:540px;
+		position:relative;
+		background:url('images/rsz_soccerfield.jpg')
+		/*background-size: contain;*/
+	}
+
+	#myAnimation {
+		width: 50px;
+		height:50px;
+		position: absolute;
+		background: url('images/ball.gif');
+		background-size: cover;
+	}
+
+	button {
+
+		width:100px;
+		height: 50px;
+		color:white;
+		background:black;
+		border-radius:25px;
+	}
+
+	img {
+		position: relative;
+		top:450px;
+		left:30px;
+		height: 100px;
+		width:50px;
+
+	}
+</style>
+
+
+</head>
+
+<header>
+
+	<ul>
+		<li><a href="index.html">Home</a> </li>
+		<li> <a href="http://www.soccerwiki.org/wiki.php">About</a></li>	
+		<li id="dropDown"><a href="#">Additional Info</a>
+			<div id="container">
+				<a href="http://www.soccergames.org/">Play Soccer</a>
+				<a href="http://worldsoccer.about.com/od/soccer101/">Learn Soccer</a>
+			</div>
+
+		</li>
+	</ul>
+
+</header>
+
+<body>
+
+
+
+<!-- Animation Portion -->
+<center>
+<h1> Try to Hit the Ball! </h1>
+	<div id="myContainer">
+		<div id="myAnimation">
+		</div>
+
+		<img src="images/stick_figure_spin_hook_kick_md_wm.gif">
+	</div>
+
+
+<p>
+<button onclick="Move()">Click Me</button>
+</p>
+</center>
+
+
+
+<script>
+var id = setInterval(frame, 2);
+
+
+function Move() {
+	var elem = document.getElementById("myAnimation");
+	var pos = 0;
+	var id = setInterval(frame, 2);
+
+	function frame() {
+	if (pos == 550) {
+		clearInterval(id);
+
+	} else {
+		/* code to change the element style. */
+		pos++;
+		elem.style.top = pos + 'px';
+		elem.style.left = pos + 'px';
+			}	
+	
+	}
+	
+}
+
+
+
+</script>
+
+</body>
+</html>
